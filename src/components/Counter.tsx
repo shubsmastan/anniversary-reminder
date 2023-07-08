@@ -36,7 +36,7 @@ const Counter = ({ dateProp, type, name }: CounterProps) => {
   }, [dateProp, timeLeft]);
 
   const days = Math.floor(
-    (timeLeft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
+    (timeLeft % (1000 * 60 * 60 * 24 * 30 * 365)) / (1000 * 60 * 60 * 24)
   );
   const hours = Math.floor(
     (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
