@@ -3,7 +3,7 @@ import { selectScreenMode } from "../store/mainSlice";
 import Welcome from "./Welcome";
 import Positive from "./Positive";
 import Negative from "./Negative";
-import Reminders from "./reminders";
+import Reminders from "./Reminders";
 
 const Interface = () => {
   const screenMode = useSelector(selectScreenMode);

@@ -1,34 +1,60 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Counter: React.FC<{ dateProp: string; type: string }> = ({
-  dateProp,
-  type,
-}) => {
+interface CounterProps {
+  dateProp: string;
+  name: string;
+  type: string;
+}
+
+const Counter = ({ dateProp, type, name }: CounterProps) => {
   const calculateDaysLeft = (): number => {
     const today = new Date();
     const date = new Date(dateProp);
     date.setFullYear(today.getFullYear());
 
-    // Adjust the date to the next year if it has already passed
     if (today > date) {
       date.setFullYear(today.getFullYear() + 1);
     }
 
-    // Calculate the difference in milliseconds between the date and today
     const timeDiff = date.getTime() - today.getTime();
 
-    // Convert milliseconds to days
-    const days = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    return days;
+    return timeDiff;
   };
 
-  const [daysLeft, setDaysLeft] = useState<number>(calculateDaysLeft());
+  const [timeLeft, setTimeLeft] = useState<number>(calculateDaysLeft());
+
+  useEffect(() => {
+    const today = new Date(Date.now());
+    const date = new Date(dateProp);
+    const timeDiff = date.getTime() - today.getTime();
+    const timer = setInterval(() => {
+      setTimeLeft(timeDiff);
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [dateProp, timeLeft]);
+
+  const days = Math.floor(
+    (timeLeft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
+  );
+  const hours = Math.floor(
+    (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="border-2 border-black pb-3 mb-3">
-      <h2 className="">Days Left to {type}: </h2>
-      <div className="">{daysLeft}</div>
+    <div className="text-2xl mb-5">
+      <p className="mb-5">
+        Time left to {name}'s {type}
+      </p>
+      <div className="text-center rounded-md border-black border-2 p-3 w-56 bg-slate-300 text-[32px]">
+        <p className="mb-2">{days} days</p>
+        <p className="mb-2">{hours} hours</p>
+        <p className="mb-2">{minutes} minutes</p>
+        <p className="mb-2">{seconds} seconds</p>
+      </div>
     </div>
   );
 };

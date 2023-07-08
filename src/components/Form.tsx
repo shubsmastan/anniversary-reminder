@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useDispatch } from "react-redux";
-import { setName as setStoreName, setKeyDates, setScreenMode } from "../store/mainSlice";
+import {
+  setName as setStoreName,
+  setKeyDates,
+  setScreenMode,
+} from "../store/mainSlice";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -12,7 +16,6 @@ const Form = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
-    // console.log(value);
   };
 
   const onDInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,8 +26,9 @@ const Form = () => {
     setWeddingDate(e.target.value);
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     dispatch(setStoreName(name));
     dispatch(
       setKeyDates({
@@ -38,35 +42,40 @@ const Form = () => {
 
   return (
     <>
-      <form className="p-5">
-        <p>What's their name? </p>
+      <form className="flex flex-col gap-2 w-56" onSubmit={handleSubmit}>
+        <label htmlFor="name">What's your partner's name?</label>
         <input
-          className="border-2 border-black rounded-md mb-4"
+          className="px-1 border-2 border-black rounded-md mb-4"
           type="text"
           id="name"
           value={name}
           onChange={handleChange}
+          required
         />
 
-        <p>When their birth day?</p>
+        <label htmlFor="bDateInput">When their birth day?</label>
         <input
-          className="border-2 border-black rounded-md"
+          className="px-1 border-2 border-black rounded-md mb-4"
           type="date"
           id="bDateInput"
           value={birtdayDate}
           onChange={onDInput}
-        ></input>
+          required
+          min={new Date().toISOString().split("T")[0]}
+        />
 
-        <p>When your wedding day?</p>
+        <label htmlFor="wDateInput">When your wedding day?</label>
         <input
-          className="border-2 border-black rounded-md"
+          className="px-1 border-2 border-black rounded-md mb-4"
           type="date"
           id="wDateInput"
           value={weddingDate}
           onChange={onWInput}
-        ></input>
+          required
+          min={new Date().toISOString().split("T")[0]}
+        />
 
-        <Button text="submit" handleClick={handleSubmit}  />
+        <Button text="Submit" />
       </form>
     </>
   );

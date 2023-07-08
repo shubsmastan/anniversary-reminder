@@ -1,25 +1,17 @@
 import Counter from "./Counter";
 import { useSelector } from "react-redux";
-import { selectKeyDate } from "../store/mainSlice";
+import { selectKeyDate, selectName } from "../store/mainSlice";
 
 const Reminders = () => {
-
-    const {birthDate, weddingDate } = useSelector(selectKeyDate);
+  const { birthDate, weddingDate } = useSelector(selectKeyDate);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const name = useSelector(selectName);
 
   return (
     <>
-      <h1 className="text-2xl">Reminders</h1>
-
-
-      <Counter 
-      dateProp={birthDate}
-      type={'birthday'}
-      />
-
-      <Counter 
-      dateProp={weddingDate}
-      type={'anniversary'}
-      />
+      <h1 className="text-[32px] mb-3">Reminders</h1>
+      <Counter dateProp={birthDate} type={"birthday"} name={name} />
+      <Counter dateProp={weddingDate} type={"anniversary"} name={name} />
     </>
   );
 };
