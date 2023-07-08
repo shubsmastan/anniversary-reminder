@@ -1,14 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRing } from "@fortawesome/free-solid-svg-icons";
-
+import { useDispatch } from "react-redux";
+import { setScreenMode } from "../store/mainSlice";
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <header className="flex items-center justify-between gap-3 p-5 bg-[#116A7B] text-white">
-        <div className="flex items-center gap-3">
+        <button
+          className="flex items-center gap-3 border-2 border-white px-2 py-1 rounded-md"
+          onClick={() => {
+            dispatch(setScreenMode(0));
+          }}>
           <FontAwesomeIcon icon={faRing} size="xl" />
           <h1 className="text-lg">Save My Marriage!</h1>
-        </div>
+        </button>
         <div>by Team Rocket (The Jump CH14)</div>
       </header>
     </>
