@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useDispatch } from "react-redux";
-import { setName as setStoreName, setKeyDates } from "../store/mainSlice";
+import { setName as setStoreName, setKeyDates, setScreenMode } from "../store/mainSlice";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const Form = () => {
         weddingDate: weddingDate,
       })
     );
-
+    dispatch(setScreenMode(3));
     // alert("hey");
   };
 
@@ -66,7 +66,7 @@ const Form = () => {
           onChange={onWInput}
         ></input>
 
-        <Button text="submit" handleClick={handleSubmit} />
+        <Button text="submit" handleClick={handleSubmit}  />
       </form>
     </>
   );
