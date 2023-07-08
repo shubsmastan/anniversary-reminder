@@ -5,8 +5,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Birthday Countdown</h1>
-      <Counter birthdate={birthdate} />
+      <h1>Welcome LoveBird</h1>
     </div>
   );
 };
