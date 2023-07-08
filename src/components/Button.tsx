@@ -1,6 +1,6 @@
 interface ButtonProps {
   text: string;
-  handleClick: () => void;
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({ text, handleClick }: ButtonProps) => {
@@ -8,7 +8,8 @@ const Button = ({ text, handleClick }: ButtonProps) => {
     <div>
       <button
         className="rounded-md px-2 py-1 w-24 text-white bg-[#116A7B]"
-        onClick={handleClick}>
+        onClick={handleClick}
+      >
         {text}
       </button>
     </div>

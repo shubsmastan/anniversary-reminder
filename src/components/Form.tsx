@@ -1,17 +1,39 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { setName as setStoreName, setKeyDates } from "../store/mainSlice";
 
 const Form = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [birtdayDate, setBirtdayDate] = useState("");
+  const [weddingDate, setWeddingDate] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
     // console.log(value);
   };
 
-  const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onDInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirtdayDate(e.target.value);
+  };
+
+  const onWInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setWeddingDate(e.target.value);
+  };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    dispatch(setStoreName(name));
+    dispatch(
+      setKeyDates({
+        birthDate: birtdayDate,
+        weddingDate: weddingDate,
+      })
+    );
+
+    // alert("hey");
   };
 
   return (
@@ -26,20 +48,25 @@ const Form = () => {
           onChange={handleChange}
         />
 
-        <p>When their birthDay?</p>
+        <p>When their birth day?</p>
         <input
           className="border-2 border-black rounded-md"
           type="date"
-          id="dateInput"
-          value="{birtdayDate}"
-          onChange={onInput}></input>
+          id="bDateInput"
+          value={birtdayDate}
+          onChange={onDInput}
+        ></input>
 
-        <Button
-          text="submit"
-          handleClick={() => {
-            console.log("TypeScript is annoying");
-          }}
-        />
+        <p>When your wedding day?</p>
+        <input
+          className="border-2 border-black rounded-md"
+          type="date"
+          id="wDateInput"
+          value={weddingDate}
+          onChange={onWInput}
+        ></input>
+
+        <Button text="submit" handleClick={handleSubmit} />
       </form>
     </>
   );

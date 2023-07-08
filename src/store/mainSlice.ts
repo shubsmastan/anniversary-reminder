@@ -9,24 +9,27 @@ export const mainSlice = createSlice({
 
   reducers: {
     // save the registration input values
-    setDate: (state, action) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    setKeyDates: (state, action) => {
       state.keyDates = action.payload;
     },
 
     // set screen mode
     setScreenMode: (state, action) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       state.screenMode = action.payload;
+    },
+
+    setName: (state, action) => {
+      state.name = action.payload;
     },
   },
 });
 
 // exporting the reducer functions
-export const { setDate, setScreenMode } = mainSlice.actions;
+export const { setKeyDates, setScreenMode, setName } = mainSlice.actions;
 
 // exporting the selectors
 export const selectKeyDate = (state: RootState) => state.main.keyDates;
 export const selectScreenMode = (state: RootState) => state.main.screenMode;
+export const selectName = (state: RootState) => state.main.name;
 
 export default mainSlice.reducer;

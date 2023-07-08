@@ -3,6 +3,7 @@
 export interface StateType {
   keyDates: { birthDate: string; weddingDate: string };
   screenMode: number;
+  name: string;
 }
 
 export const initialState: StateType = {
@@ -11,4 +12,5 @@ export const initialState: StateType = {
     weddingDate: "",
   },
   screenMode: 0,
+  name: "",
 };
