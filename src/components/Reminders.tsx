@@ -9,7 +9,7 @@ const Reminders = () => {
 
   return (
     <>
-      <h1 className="text-[32px] mb-3">Reminders</h1>
+      <h1 className="text-[32px] text-center mb-3">Reminders</h1>
       <Counter dateProp={birthDate} type={"birthday"} name={name} />
       <Counter dateProp={weddingDate} type={"anniversary"} name={name} />
     </>
