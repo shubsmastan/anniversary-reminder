@@ -23,6 +23,8 @@ export default {
             transform: "translate(0px, 0px) scale(1)",
           },
         },
+      fontFamily: {
+        belanosima: ["Belanosima", "sans-serif"],
       },
     },
   },
