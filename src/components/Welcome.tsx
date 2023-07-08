@@ -14,15 +14,15 @@ const Welcome = () => {
   };
 
   return (
-    <>
-      <main className="flex-1 p-5 bg-[#ECE5C7]">
-        <div>Hi there, are you married?</div>
-        <div className="flex gap-4">
+    <div className="text-center text-2xl flex items-center justify-center h-full">
+      <div className="mb-32">
+        <div className="mb-5">Hi there, are you married?</div>
+        <div className="flex gap-10 justify-center">
           <Button text="Yes" handleClick={handleYes} />
           <Button text="No" handleClick={handleNo} />
         </div>
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
 

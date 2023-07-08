@@ -10,5 +10,5 @@ export const initialState: StateType = {
     birthDate: "",
     weddingDate: "",
   },
-  screenMode: 1,
+  screenMode: 0,
 };
