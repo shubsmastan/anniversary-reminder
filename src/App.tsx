@@ -1,3 +1,6 @@
+
+import Counter from "./components/Counter";
+import Animation from "./components/Animation";
 import Interface from "./components/Interface";
 
 function App() {
@@ -8,6 +11,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
