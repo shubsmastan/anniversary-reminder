@@ -1,14 +1,14 @@
-import { useState } from "react";
 import Counter from "./components/Counter";
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const birthdate = "1988-02-02"; // Replace with the actual birthdate
 
   return (
-    <>
-      <div className="bg-pink-300">Hello from marisi!</div>
-    </>
+    <div>
+      <h1>Birthday Countdown</h1>
+      <Counter birthdate={birthdate} />
+    </div>
   );
-}
+};
 
 export default App;
