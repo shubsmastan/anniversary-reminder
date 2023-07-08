@@ -12,7 +12,7 @@ const Header = () => {
           onClick={() => {
             dispatch(setScreenMode(0));
           }}>
-          <FontAwesomeIcon icon={faRing} size="xl" />
+          💍
           <h1 className="text-lg">Save My Marriage!</h1>
         </button>
         <div>by Team Rocket (The Jump CH14)</div>
