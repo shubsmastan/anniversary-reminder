@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-pink-300">Hello from marisi!</div>
+      <div className="bg-pink-300">Hello from letizia!</div>
     </>
   );
 }
