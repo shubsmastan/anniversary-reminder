@@ -1,5 +1,3 @@
-import Counter from "./components/Counter";
-import Animation from "./components/Animation";
 import Interface from "./components/Interface";
 
 function App() {
@@ -7,7 +5,6 @@ function App() {
     <>
       <div className="p-0 m-0 flex flex-col font-belanosima">
         <Interface />
-        <Form />
       </div>
     </>
   );

@@ -14,6 +14,14 @@ const Interface = () => {
     );
   }
 
+  if (screenMode === 1) {
+    return (
+      <>
+        <div>Screen mode is 1</div>
+      </>
+    );
+  }
+
   return (
     <>
       <Header />

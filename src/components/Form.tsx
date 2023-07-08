@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -15,10 +16,10 @@ const Form = () => {
 
   return (
     <>
-      <form>
+      <form className="p-5">
         <p>What's their name? </p>
         <input
-          className="border-2 border-black rounded-md"
+          className="border-2 border-black rounded-md mb-4"
           type="text"
           id="name"
           value={name}
@@ -32,6 +33,13 @@ const Form = () => {
           id="dateInput"
           value="{birtdayDate}"
           onChange={onInput}></input>
+
+        <Button
+          text="submit"
+          handleClick={() => {
+            console.log("TypeScript is annoying");
+          }}
+        />
       </form>
     </>
   );

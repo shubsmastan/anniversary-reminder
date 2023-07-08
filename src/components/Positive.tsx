@@ -1,6 +1,4 @@
-import * as React from "react";
-import { useSelector } from "react-redux";
-import { selectKeyDate } from "../store/mainSlice";
+import Form from "./Form";
 
 const Positive = () => {
   return (
@@ -8,6 +6,7 @@ const Positive = () => {
       <div>
         <h1>So you are married!</h1>
         <p>In that case, better remember all the important dates!</p>
+        <Form />
       </div>
     </>
   );
