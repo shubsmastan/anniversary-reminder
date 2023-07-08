@@ -1,11 +1,11 @@
-import { useState } from "react";
+import Counter from "./components/Counter";
+import Animation from "./components/Animation";
 import Interface from "./components/Interface";
 
 function App() {
   return (
     <>
-      <div className="p-0 m-0">
-        <p>Stuff goes here</p>
+      <div className="p-0 m-0 flex flex-col font-belanosima">
         <Interface />
       </div>
     </>
