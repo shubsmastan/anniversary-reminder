@@ -5,3 +5,5 @@ aniversary reminder
 1.1 no = goodbey
 
 2 yes = set up of functionalities (wedding date, partener name, celebrations in common....)
+
+yoooo it luca
