@@ -1,7 +1,7 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import { selectScreenMode } from "./store/mainSlice";
-// import Form from "./components/Form";
+import { selectScreenMode } from "../store/mainSlice";
+import Welcome from "./Welcome";
+import Header from "./Header";
 
 const Interface = () => {
   const screenMode = useSelector(selectScreenMode);
@@ -9,16 +9,17 @@ const Interface = () => {
   if (screenMode === 0) {
     return (
       <>
-        <div>hi</div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div>bye</div>
+        <div>Loading...</div>
       </>
     );
   }
+
+  return (
+    <>
+      <Header />
+      <Welcome />
+    </>
+  );
 };
 
 export default Interface;
