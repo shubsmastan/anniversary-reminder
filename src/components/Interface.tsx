@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectScreenMode } from "./store/mainSlice";
+import { selectScreenMode } from "../store/mainSlice";
 
 const Interface = () => {
   const screenMode = useSelector(selectScreenMode);

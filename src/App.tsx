@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Interface from "./Interface";
+import Interface from "./components/Interface";
 
 function App() {
   return (
