@@ -45,15 +45,17 @@ const Counter = ({ dateProp, type, name }: CounterProps) => {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="text-2xl mb-5">
-      <p className="mb-5">
-        Time left to {name}'s {type}
-      </p>
-      <div className="text-center rounded-md border-black border-2 p-3 w-56 bg-slate-300 text-[32px]">
-        <p className="mb-2">{days} days</p>
-        <p className="mb-2">{hours} hours</p>
-        <p className="mb-2">{minutes} minutes</p>
-        <p className="mb-2">{seconds} seconds</p>
+    <div className="text-center">
+      <div className="text-2xl mb-5">
+        <p className="mb-5">
+          Time left to {name}'s {type}
+        </p>
+        <div className="mx-auto rounded-md border-black border-2 p-3 w-56 bg-slate-300 text-[32px]">
+          <p className="mb-2">{days} days</p>
+          <p className="mb-2">{hours} hours</p>
+          <p className="mb-2">{minutes} minutes</p>
+          <p className="mb-2">{seconds} seconds</p>
+        </div>
       </div>
     </div>
   );
