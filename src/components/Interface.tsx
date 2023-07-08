@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectScreenMode } from "../store/mainSlice";
 import Welcome from "./Welcome";
+import Header from "./Header";
 
 const Interface = () => {
   const screenMode = useSelector(selectScreenMode);
@@ -15,6 +16,7 @@ const Interface = () => {
 
   return (
     <>
+      <Header />
       <Welcome />
     </>
   );

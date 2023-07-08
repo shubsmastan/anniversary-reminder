@@ -1,7 +1,7 @@
 const Welcome = () => {
   return (
     <>
-      <div>hi</div>
+      <main className="flex-1 p-5 bg-[#ECE5C7]">hi</main>
     </>
   );
 };
