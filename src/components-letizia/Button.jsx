@@ -4,7 +4,7 @@ const Button = () => {
   };
   return (
     <div>
-      <button onClick={buttonClicked}> Click me</button>
+      <button className="primaryButton" onClick={buttonClicked}> Click me</button>
     </div>
   );
 };
