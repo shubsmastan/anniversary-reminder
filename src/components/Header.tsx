@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRing } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { setScreenMode } from "../store/mainSlice";
 const Header = () => {
