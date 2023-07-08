@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { StateType, initialState } from "./initialState";
+import { initialState } from "./initialState";
 import { RootState } from "./store";
 
 // export the rducer functions
